@@ -77,9 +77,10 @@
                                 @else
                                     aa += @include('searchland::search.template')
                                 @endif
-
+								
                            });
                             $("#searchbox").html(aa);
+							$("#searchbox> .activeSearch").first().addClass('selected');
                         });
                     }
                 }, 500);
