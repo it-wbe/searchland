@@ -27,7 +27,7 @@
                 clearTimeout(timeout);
             }
             ///// up
-            if($(this).val().length > 1)
+            if($(this).val().length > 0)
                 $('.resultlist').show();
             else
                 $('.resultlist').hide();
