@@ -19,6 +19,7 @@ class SearchController extends Controller
         $arr['urlname']=$config_search['urlname'];
         $arr['datacol'] = $config_search['datacol'];
         $search = quotemeta(strtolower($search));
+       // return json_encode($this->MakeSearchString($search));
         $data = \DB::select($this->MakeSearchString($search).' limit '.$config_search['count']);
         $arr['data'] = $data;
         return json_encode($arr);
@@ -39,11 +40,12 @@ class SearchController extends Controller
                 $max_count_columns = $columns;
             }
         }
-
+        $numItems = count($search_table);
+        $i = 0;
         foreach ($search_table as $table => $columns) {
 
             $search_str .= '(SELECT ' . $this->MakeColumns($columns,$max_count_columns) . ' FROM '.$table .' WHERE '.$this->MakeWhere($columns,$search_val).')';
-            if (end($search_table) != $columns) { /// if last don't add union
+            if (++$i != $numItems) { /// if last don't add union
                 $search_str .= ' union ';
             }
         }
