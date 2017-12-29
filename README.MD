@@ -74,19 +74,12 @@ for example
 "table_2"=>["a","b","c","d"]
 ````
 result has been 
-```html
-<table>
-<tr>
-<th></th><th>"a"</th><th>"b"</th><th>"c"</th><th>"d"</th>
-</tr>
-<tr>
-<td>table 1 row result</td><td>"a"</td><td>"b"</td><td>"c"</td><td>null</td>
-</tr>
-<tr>
-<td>table 2 row result</td><td>"a"</td><td>"b"</td><td>"c"</td><td>"d"</td>
-</tr>
-</table>
-```
+
+|  |"a" | "b" | "c" | "d" |
+|---|---|---|---|---|
+|table 1 row result | "1" | "2" | "3" | null |
+|table 2 row result | "a" | "b" | "c" | "d" |
+
 need install bootstrap
 ```
 	composer require twbs/bootstrap
