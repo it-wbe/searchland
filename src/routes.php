@@ -1,2 +1,2 @@
 <?php
-    Route::get('/searchland/{search}', 'Wbe\Searchland\Controllers\Search\SearchController@result');
+    Route::post('/searchland', 'Wbe\Searchland\Controllers\Search\SearchController@result');

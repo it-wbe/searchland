@@ -1,21 +1,21 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
+{{--<!-- Latest compiled and minified CSS -->--}}
+{{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
 <link rel="stylesheet" href="/packages/wbe/searchland/assets/css/searchland.css">
 
-<div class="input-group" id="adv-search" style="float: left; margin: 5px;">
-    <input type="text" class="form-control searchGlobal" placeholder="Search..." id="searchGlobal" />
-    <div class="input-group-btn">
-        <div class="btn-group" role="group">
-            <div class="dropdown dropdown-lg">
-                <div class="dropdown-menu dropdown-menu-right resultlist" role="menu" id="searchbox">
+{{--<div class="input-group" id="adv-search" style="float: left; margin: 5px;">--}}
+    {{--<input type="text" class="form-control searchGlobal" placeholder="Search..." id="searchGlobal" />--}}
+    {{--<div class="input-group-btn">--}}
+        {{--<div class="btn-group" role="group">--}}
+            {{--<div class="dropdown dropdown-lg">--}}
+                {{--<div class="dropdown-menu dropdown-menu-right resultlist" role="menu" id="searchbox">--}}
 
-                </div>
-            </div>
-            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-        </div>
-    </div>
-</div>
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
 
 <script>
     $(function () {
@@ -27,7 +27,7 @@
                 clearTimeout(timeout);
             }
             ///// up
-            if($(this).val().length > 0)
+            if($(this).val().length > 1)
                 $('.resultlist').show();
             else
                 $('.resultlist').hide();
@@ -65,7 +65,10 @@
                 activeButton = 0;
                 timeout = setTimeout(function () {
                     if ($(".searchGlobal").val().length > 0) {
-                        $.get("/searchland/" + $('#searchGlobal').val(), function (data) {
+                        $.post("/searchland" ,{
+                            "_token": "{{ csrf_token() }}",
+                            "search":$('#searchGlobal').val()
+                        }, function (data) {
                             var aa="";
                             data = JSON.parse(data);
                             var template = $('#template');
@@ -77,7 +80,7 @@
                                 @else
                                     aa += @include('searchland::search.template')
                                 @endif
-								
+
                            });
                             $("#searchbox").html(aa);
 							$("#searchbox> .activeSearch").first().addClass('selected');

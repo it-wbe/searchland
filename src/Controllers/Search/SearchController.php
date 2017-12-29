@@ -14,11 +14,12 @@ class SearchController extends Controller
 //        return view('');
     }
 
-    public function result($search)
+    public function result()
     {
-
         $aa = new SearchHelper();
-        $sql = $aa->generateSQL(quotemeta(strtolower($search)));
+        $str = request()->post("search");
+          //  $str = utf8_encode ($search);//, "utf-8");
+        $sql = $aa->generateSQL(quotemeta(strtolower($str)));
         $config_search = config('search');
         $arr['urlname']=$config_search['urlname'];
         $arr['datacol'] = $config_search['datacol'];
