@@ -80,10 +80,10 @@ result has been
 <th></th><th>"a"</th><th>"b"</th><th>"c"</th><th>"d"</th>
 </tr>
 <tr>
-<th>table 1 row result</th><th>"a"</th><th>"b"</th><th>"c"</th><th>null</th>
+<td>table 1 row result</td><td>"a"</td><td>"b"</td><td>"c"</td><td>null</td>
 </tr>
 <tr>
-<th>table 2 row result</th><th>"a"</th><th>"b"</th><th>"c"</th><th>"d"</th>
+<td>table 2 row result</td><td>"a"</td><td>"b"</td><td>"c"</td><td>"d"</td>
 </tr>
 </table>
 ```
