@@ -40,9 +40,10 @@ count - max count row in popup search
 urlname - fild where is link on page
 datacol - default data column
 
-config/search_table
+create file
+config/search_tables
 
-Example
+Example search_tables file
 ```php
    "news"=>[
         "columns"=>["title",
