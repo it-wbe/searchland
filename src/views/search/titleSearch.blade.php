@@ -1,22 +1,4 @@
-{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
-{{--<!-- Latest compiled and minified CSS -->--}}
-{{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
 <link rel="stylesheet" href="/packages/wbe/searchland/assets/css/searchland.css">
-
-{{--<div class="input-group" id="adv-search" style="float: left; margin: 5px;">--}}
-    {{--<input type="text" class="form-control searchGlobal" placeholder="Search..." id="searchGlobal" />--}}
-    {{--<div class="input-group-btn">--}}
-        {{--<div class="btn-group" role="group">--}}
-            {{--<div class="dropdown dropdown-lg">--}}
-                {{--<div class="dropdown-menu dropdown-menu-right resultlist" role="menu" id="searchbox">--}}
-
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
-
 <script>
     $(function () {
         var activeButton = 0;
@@ -84,6 +66,7 @@
                            });
                             $("#searchbox").html(aa);
 							$("#searchbox> .activeSearch").first().addClass('selected');
+							$("#searchbox").show();
                         });
                     }
                 }, 500);
