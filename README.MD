@@ -17,7 +17,7 @@ php artisan vendor:publish --provider="Wbe\Searchland\SearchlandServiceProvider"
 
 add to blade in script section
 ```php
-@include('titleSearch')
+@include('searchland::search.titleSearch')
 ```
 
 add to search input class "searchGlobal"
